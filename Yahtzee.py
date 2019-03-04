@@ -25,6 +25,7 @@ def roll_dice(num_dice, num_rolls):
 # double_list: [[1, 5, 6],[2, 3, 1],[1, 3, 3]]
 # sum_of_roll should return: [12, 6, 7]
 def sum_of_roll(double_list):
+    
     num_rolls = len(double_list)
     num_dice = len(double_list[0])
     sums = [0 for i in range(num_rolls)]
@@ -34,19 +35,33 @@ def sum_of_roll(double_list):
             sums[roll] += double_list[roll][die]
             
     return sums
-    
-
 
 # Bonus function! Takes a 2D list and returns
 # the number of times a person rolls Yahtzee (all dice have
 # the same value). Hint: you may want to create a helper
 # function that takes individual rows of the list.
-#def yahtzee(double_list):
-    # Bonus: your code here
-#    return 0
+def yahtzee(double_list):
+    
+    num_yahtzees = 0
+    
+    for roll in double_list:
+        if roll_is_yahtzee(roll):
+            num_yahtzees += 1
+    
+    return num_yahtzees                        
 
+def roll_is_yahtzee(list):
+    
+    is_yahtzee = True
+    first_die = list[0]
 
-# To play, yo'd do something like this
+    for die in list:
+        # If we still have a potential yahtzee, check the next die
+        is_yahtzee = (is_yahtzee and (die == first_die))
+
+    return is_yahtzee        
+  
+# To play, you'd do something like this
 dice = int(input("How many dice?"))
 rolls = int(input("What is the number of rolls?"))
 list = roll_dice(dice, rolls)
@@ -55,6 +70,6 @@ print("Sum of roll:", sum_of_roll(list))
 print("Testing sum_of_roll...")
 testEqual(sum_of_roll([[4, 5, 2],[6,2,1],[4,4,4]]), [11, 9, 12])
 testEqual(sum_of_roll([[3, 4, 6],[2,6,1],[3,4,3]]), [13, 9, 10])
-#print("Testing yahtzee...")
-#testEqual(yahtzee([[4, 5, 2],[6,2,1],[4,4,4]]), 1)
-#testEqual(yahtzee([[3, 4, 6],[2,6,1],[3,4,3]]), 0)
+print("Testing yahtzee...")
+testEqual(yahtzee([[4, 5, 2],[6,2,1],[4,4,4]]), 1)
+testEqual(yahtzee([[3, 4, 6],[2,6,1],[3,4,3]]), 0)
