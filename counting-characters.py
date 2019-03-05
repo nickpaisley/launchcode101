@@ -3,7 +3,7 @@
 #created - 3.4.19
 
 #Write a program that calculates the number of times each character occurs in a string and prints these stats to the console.
-#Here’s a test string, for your conveniencepopp
+#Here’s a test string, for your conveniencepoppdef
 
 test_string = "AABBCC"
 
