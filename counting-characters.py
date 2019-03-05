@@ -5,7 +5,7 @@
 #Write a program that calculates the number of times each character occurs in a string and prints these stats to the console.
 #Here’s a test string, for your convenience
 
-test_string = "CCBBAA"
+test_string = "234r"
 
 char_dict = {}
 def char_add(test_string): 
@@ -16,6 +16,6 @@ def char_add(test_string):
     
 
 char_add(test_string)
-chars = char_dict.values()
+charcount = char_dict
 for keys in (char_dict):
-    print(keys, chars)
+    print(keys, charcount)
