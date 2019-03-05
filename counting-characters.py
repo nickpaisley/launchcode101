@@ -9,11 +9,13 @@ test_string = "CCBBAA"
 
 char_dict = {}
 def char_add(test_string): 
+        
     for char in test_string:
         char_dict[char] = test_string.count(char)
     return (char_dict)
     
 
 char_add(test_string)
+chars = char_dict.values()
 for keys in (char_dict):
-    print(keys)
+    print(keys, chars)
