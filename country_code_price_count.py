@@ -1,5 +1,5 @@
 def get_country_codes(prices):
-    return ",".join([item.split("$")[0] for item in prices.split(", ")])
+    return ", ".join([item.split("$")[0] for item in prices.split(", ")])
 
 
 def main():
