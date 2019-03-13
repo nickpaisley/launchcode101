@@ -5,7 +5,7 @@
 #A rectangle can indicate whether it is smaller than another rectangle in terms of area. DONE but without a function only a comparison call.
 #A rectangle can indicate whether it is in fact a square.
 
-import operator
+
 
 #create Rectangle Class
 class Rectangle():
@@ -21,7 +21,7 @@ class Rectangle():
     def rectangle_perimeter(self):
         return 2*(self.length+self.width)
 
-    #method to determine if rectangle1 is smaller than rectangle1 one rectangle to another
+    #method to determine if rectangle1 is smaller than rectangle2
     def __le__(self, other):
         return ((self.length, self.width) <= (other.length, other.width))
                 
